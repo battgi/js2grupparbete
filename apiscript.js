@@ -10,7 +10,6 @@ function bookReq() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 parsedBookData = JSON.parse(xhr.responseText);
-                console.log(parsedBookData);
                 for (let i = 0; i < parsedBookData.items.length; i++) {
                     findImage(parsedBookData.items[i].volumeInfo);
                     findBuy(parsedBookData.items[i]);
@@ -67,9 +66,9 @@ function findImage(data) {
 //resett the results before new search
 function removeChild() {
     let removeThis = document.querySelectorAll('ul > li');
-    for (var i = 0, il = removeThis.length; i < il; i++) {
-        existingElement.removeChild(removeThis[i]);
-    }
+    removeThis.forEach(function (element) {
+        existingElement.removeChild(element);
+    });
 }
 //creating the new element from parsed data
 function addElement(title, subtitle, image, buy, description) {
