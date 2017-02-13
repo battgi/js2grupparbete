@@ -29,17 +29,17 @@ function bookReq() {
 //BUTTONS
 function descriptionButton(current) {
     let viewDescriptionButton = document.getElementsByClassName('viewDescriptionButton');
-    viewDescriptionButton[current].addEventListener('click', function () {
+    viewDescriptionButton[current].addEventListener('click', () => {
         document.getElementsByClassName('viewDescriptionContent')[current].classList.toggle('viewDescriptionContentDisplayed');
     });
 }
-document.getElementById('submitButton').addEventListener('click', function (e) {
+document.getElementById('submitButton').addEventListener('click', ()=> {
     document.getElementById('container').classList.add('containerSize');
     titleUserInput = document.getElementById('userInput').value; //setting the new user value to query string
     removeChild(); // resetting the search
     bookReq(); //making the request
 });
-document.getElementById('hideNotAvailable').addEventListener('click', function (e) {
+document.getElementById('hideNotAvailable').addEventListener('click', ()=> {
     let elements = document.querySelectorAll('.notAvailable');
     elements.forEach(function (element) {
         element.classList.toggle('hidden');
