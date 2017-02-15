@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Merriweather');
+@import url("http://www.dafont.com/bohemian-typewriter.font");
+
+
+/*font-family: 'Merriweather', serif;
+
+font-family: 'Cinzel Decorative', cursive;*/
+
+
+h1,
+
+h3,
+
+h6,
+
+body,
+main,
+
+button,
+
+p,
+
+a,
+
+ol,
+
+ul,
+
+li {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    text-decoration: none;
+
+}
+
+
+body {
+
+    font-size: 10px;
+    font-family: 'Bohemian typewriter', serif;
+
+}
+
+
+
+
+
+/*Styling*/
+
+.flexThis {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+main {
+    height: 100vh;
+    background-image: url(ataleuntold.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+h3, h6, p, button, a {
+    color: black;
+}
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 5.4em;
+    font-weight: 800;
+    
+}
+
+h3, h6 {
+    font-size: 2.4em;
+}
+
+p {
+    font-size: 2.2em;
+}
+
+.navbar {
+    background-color: #c55c58;
+    opacity: 0.5;
+}
+
+.footer {
+    background-color: #e9b699;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#boxed {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.7;
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+
+/*Menu*/
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
