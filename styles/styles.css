@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Merriweather');
+
+/*font-family: 'Merriweather', serif;
+font-family: 'Cinzel Decorative', cursive;*/
+
+h1,
+h3,
+h6,
+body,
+button,
+p,
+a,
+ol,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-size: 10px;
+}
+
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h3, h6, p{
+   font-family: 'Merriweather', serif;
+}
+
+h6 {
+    
+}
+
+button {}
+
+p {}
