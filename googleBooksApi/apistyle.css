@@ -1,0 +1,215 @@
+body,
+html,
+li,
+ul,
+ol,
+h1,
+h3,
+h6,
+a {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+
+button:focus,
+input:focus {
+    outline: 0;
+}
+
+body {
+    text-align: center;
+    font-size: 10px;
+    background-color: rgb(30, 30, 30);
+    color: rgb(0, 0, 0);
+}
+
+.container::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0.3em;
+}
+
+.container::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(100, 100, 100);
+    outline: 1px solid white;
+}
+
+h1 {
+    color: white;
+    font-size: 3.5em;
+    margin: 1em 0 0.5em 0;
+}
+
+#filter{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#filter input {
+    border: none;
+    flex-basis: 40%;
+ 
+}
+
+#filter button {
+    background-color: rgb(180, 180, 180);
+    border: none;
+    cursor: pointer;
+}
+#filter * {
+    margin: 0 0 0.5em 0;
+}
+
+#filter button:hover {
+    background-color: rgb(120, 120, 120);
+}
+
+#filter button:nth-of-type(1) {
+   flex-basis: 40%;
+}
+
+#filter button:nth-of-type(2) {
+  flex-basis: 80%;
+}
+
+#container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.container {
+    height: 0;
+    background-color: rgb(100, 100, 100);
+    overflow-y: scroll;
+    -webkit-transition: 2s;
+    transition: 2s;
+}
+
+.containerSize {
+    height: 50em;
+}
+
+#container > li {
+    -ms-flex-preferred-size: 95%;
+    flex-basis: 95%;
+    margin: 0.5%;
+    padding: 0.5%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 0.5em;
+    background-color: rgba(235, 235, 235, 0.6);
+    -webkit-animation: fadein 1s;
+    animation: fadein 1s;
+}
+
+#container > li > h3 {
+    font-size: 2.4em;
+}
+
+#container > li > h6 {
+    font-size: 2em;
+    font-weight: 200;
+}
+
+#container > li > a {
+    display: block;
+    font-size: 2.3em;
+    width: 50%;
+    margin: 0 auto;
+    color: white;
+    font-weight: 800;
+    background-color: rgb(80, 30, 30);
+    border-radius: 0.2em;
+}
+
+#container > li.notAvailable > a {
+    background: none;
+    color: gray;
+}
+
+#container > li > p.viewDescriptionContent {
+    display: none;
+    font-size: 1.5em;
+}
+
+#container > li >p.viewDescriptionContentDisplayed {
+    display: block;
+}
+
+#container > li > button {
+    display: block;
+    background: none;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    margin: 1em auto;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+@media (min-width: 690px) and (max-width: 900px) {
+    #container > li {
+        -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    }
+    #filter {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 901px) {
+    #container > li {
+        -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    }
+    #filter {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

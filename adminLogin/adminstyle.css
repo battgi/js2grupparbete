@@ -1,0 +1,11 @@
+.loggedOut {
+    display: none;
+}
+
+.settings {
+    width: 30em;
+}
+
+.loggedIn{
+    display: block;
+}
