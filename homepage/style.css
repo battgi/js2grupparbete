@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Merriweather');
+
+/*font-family: 'Merriweather', serif;
+font-family: 'Cinzel Decorative', cursive;*/
+
+h1,
+h3,
+h6,
+body,
+button,
+p,
+a,
+ol,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.flexThis {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+body {
+    font-size: 10px;
+}
+
+header {
+    height: 10vh;
+    background-color: rgba(50, 50, 50, 0.3);
+    line-height: 10vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    left: 0;
+}
+
+main {
+    background-color: blue;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?dpr=1.5&auto=compress,format&fit=crop&w=767&h=709&q=80&cs=tinysrgb&crop=");
+    background-position:center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+footer {
+    background-color: rgb(50, 50, 50);
+    height: 30vh;
+}
+
+
+
+/*Menu*/
+
+.sidenavButton {
+    position: fixed;
+    top: 1em; 
+    left: 1em;
+    z-index: 150;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.sidenavButton:focus {
+    outline: none;
+}
+
+
+/*Sidenav*/
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    width: 0;
+    height: 100%;
+    z-index: 100;
+    overflow-x: hidden;
+    background-color: rgba(50, 50, 50, 0.7);
+}
+
+.sidenavOpen {
+    width: 35em;
+}
+
+.sidenav > ul > li {
+    flex-basis: 80%;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 800;
+    padding: 1.5em;
+}
+
+.sidenav > ul > li > a {
+    display: block;
+    color: white;
+    transition: 0.3s;
+    height: 3em;
+    line-height: 3em;
+}
+.sidenav > ul > li > a:hover {
+    color: rgb(100, 100, 100);
+}
+
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h3, h6, p{
+   font-family: 'Merriweather', serif;
+}

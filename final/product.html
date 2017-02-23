@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+    <link rel="stylesheet" href="productstyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> </head>
+
+<body>
+    <header class="navbar flexThis">
+        <h1>A Tale Untold</h1>
+     </header>
+     
+    <div class="slidesContainer">
+        <ul id="slides">
+            <li class="slide showing">
+                <h1>Book gathering</h1>
+                <p>This text is going to be replaced with something else...</p>
+                <button>Contact us for more info</button>
+            </li>
+            <li class="slide">
+                <h1>We're hiring</h1>
+                <p>This text is going to be replaced with something else...</p>
+                <button>Contact us for more info</button>
+            </li>
+            <li class="slide">
+                <h1>Shop open</h1>
+                <p>This text is going to be replaced with something else...</p>
+                <button>Contact us for more info</button>
+            </li>
+        </ul>
+        
+        <div class="buttons">
+            <button id="previous">&lt;</button>
+            <button id="pause">&#10074;&#10074;</button>
+            <button id="next">&gt;</button>
+        </div>
+    </div>
+    
+    <h1 class="title"> Find your next journey</h1>
+    
+    <div id="filter">
+        <input type="text" id="userInput" placeholder="enter title here" name="userInput">
+        <button id="submitButton">Search</button>
+        <button id="hideNotAvailable">Hide not available</button>
+    </div>
+    
+    <p id="searchResult" class="lesserTitle"></p>
+    
+    <div class="previewerContainer hidden">
+        <div id="viewerCanvas"></div>
+    </div>
+    
+    <ul id="container" class="container"></ul>
+    <h1 class="title">Book recommendations based on</h1>
+    <h3 class="lesserTitle">J.K. Rowling</h3>
+    <ul id="authorOneContainer" class="container containerSize"></ul>
+    <h3 class="lesserTitle">William Shakespear</h3>
+    <ul id="authorTwoContainer" class="container containerSize"></ul>
+    <h3 class="lesserTitle">Stephen King</h3>
+    <ul id="authorThreeContainer" class="container containerSize"></ul>
+    <h3 class="lesserTitle">Harold Robbins</h3>
+    <ul id="authorFourContainer" class="container containerSize"></ul>
+    
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <script src="productscript.js"></script>
+    <footer>
+        <nav>
+            <ul>
+                <li class="adminLogin">
+                    <p>Username:</p>
+                    <input type="text">
+                    <p>Password:</p>
+                    <input type="password">
+                    <button>Login</button>
+                </li>
+                <li>
+                    <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBiRrrqJZsOFt_kSAZdW7U5xzcIQn9B4Ms&q=Space+Needle,Seattle+WA" allowfullscreen> </iframe>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
