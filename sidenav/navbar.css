@@ -23,7 +23,7 @@ body {
     flex-wrap: wrap;
 }
 
-button {
+.sidenavButton {
     background: none;
     border: none;
     color: gray;
@@ -31,7 +31,7 @@ button {
     cursor: pointer;
 }
 
-button:focus {
+.sidenavButton:focus {
     outline: none;
 }
 
@@ -49,10 +49,14 @@ button:focus {
 }
 
 .sidenavOpen {
+<<<<<<< HEAD:sidenavAndPictureSlider/navbar.css
     width: 10%;
 }
 
 .sidenav > ul {
+=======
+    width: 40%;
+>>>>>>> 1e74eb6a1f6ab62f90bb8390ce95bcba4868871a:sidenav/navbar.css
 }
 
 .sidenav > ul > li {
@@ -76,41 +80,3 @@ button:focus {
     color: white;
 }
 /*Picture slider*/
-
-.pictureSlider {
-    
-}
-
-.pictureSlider > ul {
-    
-}
-
-.pictureSlider > ul > li {
-    
-}
-
-.pictureSlider > ul > li:nth-of-type(1){
-    
-}
-.pictureSlider > ul > li:nth-of-type(2){
-    
-}
-.pictureSlider > ul > li:nth-of-type(3){
-    
-}
-.pictureSlider > ul > li:nth-of-type(4){
-    
-}
-.pictureSlider > ul > li:nth-of-type(5){
-    
-}
-
-
-.pictureSlider > ul > li > a {
-    
-}
-
-
-
-
-
