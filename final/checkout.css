@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Merriweather');
+body,
+html,
+li,
+ul,
+ol,
+h1,
+h3,
+h6,
+a {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h3,
+h6,
+p {
+    font-family: 'Merriweather', serif;
+}
+
+button:focus,
+input:focus {
+    outline: 0;
+    color: white;
+}
+
+body {
+    text-align: center;
+    font-size: 10px;
+    background-color: rgb(30, 30, 30);
+    color: rgb(0, 0, 0);
+}
+
+.container::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.sidenav::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: rgb(50, 50, 50)
+}
+
+header {
+    height: 5em;
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(50, 50, 50, 0.94)
+}
+
+h1 {
+    text-shadow: 0 0 0.2em black;
+    font-size: 2em;
+}
+
+header h1 {
+    position: fixed;
+    right: 0.44em;
+    letter-spacing: 0.1em;
+    font-size: 2em;
+    color: #c55c58;
+}
+
+.title {
+    color: rgb(220, 220, 220);
+    margin: 1em;
+}
+
+.lesserTitle {
+    margin: 1em;
+    color: rgb(160, 160, 160);
+    font-size: 2em;
+    font-weight: 800;
+    text-align: left;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 3em;
+    font-size: 2.4em;
+    color: white;
+    text-shadow: 0 0 0.1em black;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 0.6em;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(200, 200, 200, 0.3);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(150, 150, 150, 0.3);
+}
+
+.registration {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.registration > input {
+    flex-basis: 80%;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+
+.registration > p {
+    flex-basis: 80%;
+    color: white;
+    font-size: 1.4em;
+}
+
+.registration > button {
+    flex-basis: 50%;
+    margin-bottom: 1em;
+}
+
+input::-webkit-input-placeholder {
+    color: rgb(150, 150, 150);
+    font-size: 1.4em;
+}
+
+.sidenavButton {
+    top: 0.364em;
+    left: 0.6em;
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    width: 5em;
+}
+
+.sidenavButton:focus {
+    outline: none;
+}
+
+
+/*Sidenav*/
+
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1.5s;
+    width: 100%;
+    height: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    background-color: rgba(50, 50, 50, 1);
+}
+
+.sidenavOpen {
+    height: 100%;
+}
+
+.sidenav > ul > li {
+    margin-top: 2em;
+    flex-basis: 80%;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 800;
+    padding: 1.5em;
+}
+
+.sidenav > ul > li > a {
+    display: block;
+    color: white;
+    transition: 0.3s;
+    height: 3em;
+    line-height: 3em;
+}
+
+.sidenav > ul > li > a:hover {
+    color: rgb(100, 100, 100);
+}
+#footer {
+    margin-top: 5em 0 0 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(50, 50, 50);
+}
+
+#footer * {
+    opacity: 0.9;
+}
+
+#footer #subscribe {
+    width: 100%;
+    background-color: white;
+    color: black;
+    width: 90%;
+    align-self: center;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+#footer #subscribe:hover {
+    opacity: 0.5;
+}
+#footer h1 {
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+
+#footer nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer nav ul li {
+    flex: 1;
+}
+
+#footer nav ul li iframe {
+    margin: 2%;
+    height: 25em;
+    width: 80%;
+    opacity: 0.9;
+}
+
+.adminLogin {
+    display: flex;
+    flex-direction: column;
+}
+
+.adminLogin > * {
+    margin: 1em;    
+}
+
+
+/* Menu END OF MUST CONTAIN */
+
+@media (min-width: 690px) and (max-width: 900px) {
+    header h1 {
+        font-size: 3.4em;
+    }
+    footer nav ul {
+        flex-direction: row;
+    }
+    .slide {
+        padding: 22em 2em 0 2em;
+    }
+    .registration > input {
+        flex-basis: 50%;
+    }
+    
+    #footer nav ul {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 901px) {
+    header h1 {
+        font-size: 3.4em;
+    }
+    #footer nav ul {
+        flex-direction: row;
+    }
+    .registration > input {
+        flex-basis: 50%;
+    }
+   
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

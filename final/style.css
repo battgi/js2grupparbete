@@ -1,8 +1,4 @@
-
-
-
 /*MUST CONTAIN*/
-
 
 @import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Merriweather');
 
@@ -43,9 +39,10 @@ button:focus,
 input:focus {
     outline: 0;
 }
+
 .container::-webkit-scrollbar,
 body::-webkit-scrollbar,
-.sidenav::-webkit-scrollbar{
+.sidenav::-webkit-scrollbar {
     width: 0.5em;
     background-color: rgb(50, 50, 50)
 }
@@ -112,6 +109,7 @@ header h1 {
     color: #c55c58;
 }
 
+
 /* END OF MUST CONTAIN */
 
 p {
@@ -164,9 +162,10 @@ main > div > button {
     overflow: hidden;
     padding-left: 0.3em;
     animation: fadein 3s;
+    z-index: 1;
 }
 
-.newsletter > h3,
+.newsletter > label,
 .newsletter > input,
 .newsletter > div,
 .newsletter > button:nth-of-type(1) {
@@ -176,6 +175,7 @@ main > div > button {
     border: none;
     text-align: center;
     width: 100%;
+    font-size: 1.4em;
 }
 
 .newsletter > h3 {
@@ -205,10 +205,10 @@ main > div > button {
     margin: 5em 2% 0 2%;
 }
 
-
 #about > div:nth-of-type(1) {
     margin: 2em;
 }
+
 #about > div:nth-of-type(2) {
     margin-bottom: 5em;
     display: flex;
@@ -223,14 +223,64 @@ main > div > button {
 #about img {
     width: 14em;
     border-radius: 50%;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
 
+#footer {
+    margin-top: 5em 0 0 0;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(50, 50, 50);
+}
 
-footer {
-    background-color: rgb(30, 30, 30);
-    height: 30vh;
+#footer * {
+    opacity: 0.9;
+}
+
+#footer #subscribe {
+    width: 100%;
+    background-color: white;
+    color: black;
+    width: 90%;
+    align-self: center;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+#footer #subscribe:hover {
+    opacity: 0.5;
+}
+#footer h1 {
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+
+#footer nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer nav ul li {
+    flex: 1;
+}
+
+#footer nav ul li iframe {
+    margin: 2%;
+    height: 25em;
+    width: 80%;
+    opacity: 0.9;
+}
+
+.adminLogin {
+    display: flex;
+    flex-direction: column;
+}
+
+.adminLogin > * {
+    margin: 1em;    
 }
 
 
@@ -293,6 +343,7 @@ footer {
     color: rgb(100, 100, 100);
 }
 
+
 /* Menu END OF MUST CONTAIN */
 
 h1 {
@@ -319,6 +370,9 @@ p {
         font-size: 3em;
     }
     #about > div:nth-of-type(2) {
+        flex-direction: row;
+    }
+    #footer nav ul {
         flex-direction: row;
     }
 }
@@ -362,6 +416,9 @@ p {
         font-size: 1.5em;
     }
     #about > div:nth-of-type(2) {
+        flex-direction: row;
+    }
+    #footer nav ul {
         flex-direction: row;
     }
 }

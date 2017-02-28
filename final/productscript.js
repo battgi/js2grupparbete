@@ -4,10 +4,14 @@ let bookData, titleInput, inputType, xhr = new XMLHttpRequest()
     , authorTwoElement = document.getElementById('authorTwoContainer')
     , authorThreeElement = document.getElementById('authorThreeContainer')
     , authorFourElement = document.getElementById('authorFourContainer')
-    , currentImage, currentBuy, currentIdentifier, currentSubtitle, currentDescription, currentElement
-    , identifiers = []
+    , currentImage, currentBuy, currentIdentifier, currentSubtitle, currentDescription, currentElement, identifiers = []
+    , titles = []
+    , titlesUser = []
     , userIdentifiers = []
-    , ready = false;
+    , bookCart = []
+    , priceCart = []
+    , ready = false
+    , bookCounter = 0;
 //FILTER FOR GOOGLE BOOKS API CALL///////////////////////////////////////////////////////////////////////////////////
 let filter = {
         findBuy: (data) => {
@@ -61,7 +65,7 @@ let filter = {
                 });
             } // making it ready for new search
     }
-//PREVIEWER THAT TAKES DATA FROM PARSED BOOK DATA///////////////////////////////////////////////////////////////////////////////
+    //PREVIEWER THAT TAKES DATA FROM PARSED BOOK DATA///////////////////////////////////////////////////////////////////////////////
 let viewer;
 google.books.load();
 google.books.setOnLoadCallback(initialize);
@@ -69,28 +73,26 @@ google.books.setOnLoadCallback(initialize);
 function initialize() {
     viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
 }
-
-//SEED/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-(function() {
-     currentElement = authorOneElement;
+//LOAD BEFORE START/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+(function () {
+    currentElement = authorOneElement;
     inputType = "inauthor=";
-    titleInput = "J.K. Rowling";
+    titleInput = localStorage.getItem('authorOne');
     bookReq();
     currentElement = authorTwoElement;
     inputType = "inauthor=";
-    titleInput = "William Shakespear";
+    titleInput = localStorage.getItem('authorTwo');
     bookReq();
     currentElement = authorThreeElement;
     inputType = "inauthor=";
-    titleInput = "Stephen King";
+    titleInput = localStorage.getItem('authorThree');
     bookReq();
     currentElement = authorFourElement;
     inputType = "inauthor=";
-    titleInput = "Harold Robins";
+    titleInput = localStorage.getItem('authorFour');
     bookReq();
     info();
- })();
-
+})();
 // GOOGLE BOOKS API //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function bookReq() {
     xhr.open("GET", "https://www.googleapis.com/books/v1/volumes?q=" + inputType + titleInput + "&maxResults=40&key=AIzaSyDj4JhqWEGJPDRpDgT2rNsmjDrvIYkDIkA", ready);
@@ -106,9 +108,11 @@ function bookReq() {
                 filter.findDescription(book.volumeInfo.description)
                 addElement(book.volumeInfo.title, currentSubtitle, currentImage, currentBuy, currentDescription, currentElement);
                 if (ready) {
+                    titlesUser.push(book.volumeInfo.title);
                     userIdentifiers.push(currentIdentifier);
                 }
                 else {
+                    titles.push(book.volumeInfo.title);
                     identifiers.push(currentIdentifier);
                 }
             }
@@ -126,10 +130,10 @@ function bookReq() {
     xhr.send(null);
 }
 ///BUTTONS FOR EACH SEARCH RESAULT////////////////////////////////////////////////////////////////////////////////////////////////
-
 function info() {
     let viewDescriptionButton = document.getElementsByClassName('viewDescriptionButton')
-        , previewButton = document.getElementsByClassName('previewButton');
+        , previewButton = document.getElementsByClassName('previewButton')
+        , addToCartButton = document.getElementsByClassName('addToCartButton');
     for (let i = 0; i < viewDescriptionButton.length; i++) {
         viewDescriptionButton[i].addEventListener('click', () => {
             document.getElementsByClassName('viewDescriptionContent')[i].classList.toggle('viewDescriptionContentDisplayed');
@@ -142,11 +146,21 @@ function info() {
             document.getElementsByClassName('previewerContainer')[0].classList.toggle('hidden');
         });
     }
+    for (let i = 0; i < addToCartButton.length; i++) {
+        addToCartButton[i].addEventListener('click', () => {
+            document.getElementsByClassName('orderBooksButton')[0].classList.add('orderBooksButtonDisplay');
+            bookCart.push(titles[i]);
+            addToCartButton[i].innerHTML = "Added!";
+            localStorage.setItem('storageBookCart', JSON.stringify(bookCart));
+            document.getElementById('bookCounterElement').innerHTML = JSON.parse(localStorage.getItem('storageBookCart')).length;
+        });
+    }
 }
 
 function userInfo() {
     let viewDescriptionButtonUser = document.getElementsByClassName('viewDescriptionButtonUser')
-        , previewButtonUser = document.getElementsByClassName('previewButtonUser');
+        , previewButtonUser = document.getElementsByClassName('previewButtonUser')
+        , addToCartButtonUser = document.getElementsByClassName('addToCartButtonUser');
     for (let i = 0; i < viewDescriptionButtonUser.length; i++) {
         viewDescriptionButtonUser[i].addEventListener('click', () => {
             document.getElementsByClassName('viewDescriptionContentUser')[i].classList.toggle('viewDescriptionContentDisplayed');
@@ -157,6 +171,15 @@ function userInfo() {
             initialize();
             viewer.load(userIdentifiers[i]);
             document.getElementsByClassName('previewerContainer')[0].classList.toggle('hidden');
+        });
+    }
+    for (let i = 0; i < addToCartButtonUser.length; i++) {
+        addToCartButtonUser[i].addEventListener('click', () => {
+            document.getElementsByClassName('orderBooksButton')[0].classList.add('orderBooksButtonDisplay');
+            bookCart.push(titlesUser[i]);
+            addToCartButtonUser[i].innerHTML = "Added!";
+            localStorage.setItem('storageBookCart', JSON.stringify(bookCart));
+            document.getElementById('bookCounterElement').innerHTML = JSON.parse(localStorage.getItem('storageBookCart')).length;
         });
     }
 }
@@ -196,9 +219,9 @@ function addElement(title, subtitle, image, buy, description, existing) {
         , newDescriptionButton = document.createElement('button')
         , newPreviewButton = document.createElement('button')
         , newDescription = document.createElement('p');
+    newContainer.appendChild(newThumbnail);
     newContainer.appendChild(newTitle);
     newContainer.appendChild(newSubtitle);
-    newContainer.appendChild(newThumbnail);
     newContainer.appendChild(newBuy);
     newContainer.appendChild(newDescriptionButton);
     newContainer.appendChild(newDescription);
@@ -206,16 +229,14 @@ function addElement(title, subtitle, image, buy, description, existing) {
     newTitle.appendChild(newTitleContent);
     newSubtitle.appendChild(newSubtitleContent);
     newThumbnail.setAttribute('src', image);
-    newBuy.setAttribute('href', buy);
-    newBuy.setAttribute('target', '_blank');
-    newBuy.innerHTML = 'Order';
+    newBuy.className = "addToCartButton";
+    newBuy.innerHTML = 'Add to cart';
     //CHECKS IF IT IS THE USER WHO SEARCHED OR IF IT IS THE SEED
-    if (currentBuy == '#notAvailable') {    
+    if (currentBuy == '#notAvailable') {
         newBuy.innerHTML = 'Not available';
-        newBuy.setAttribute('target', '_self');
-        newContainer.className = 'notAvailable'
+        newContainer.className = 'notAvailable';
     }
-    newDescriptionButton.innerHTML = 'View Description';
+    newDescriptionButton.innerHTML = 'Read description...';
     newPreviewButton.innerHTML = 'Preview';
     //CHECKS IF IT IS THE USER WHO SEARCHED OR IF IT IS THE SEED
     if (!ready) {
@@ -227,6 +248,7 @@ function addElement(title, subtitle, image, buy, description, existing) {
         newDescriptionButton.className = 'viewDescriptionButtonUser';
         newPreviewButton.className = 'previewButtonUser';
         newDescription.className = 'viewDescriptionContentUser';
+        newBuy.className = "addToCartButtonUser";
     }
     newDescription.appendChild(newDescriptionContent);
     existing.appendChild(newContainer);
@@ -275,3 +297,19 @@ previous.addEventListener('click', () => {
     sliderFunctions.pauseSlideshow();
     sliderFunctions.previousSlide();
 });
+//DISPLAY CORRECT NAMES FROM THE CMS CONSOLE
+let previewAuthorOne = document.getElementById('previewAuthorOne')
+    , previewAuthorTwo = document.getElementById('previewAuthorTwo')
+    , previewAuthorThree = document.getElementById('previewAuthorThree')
+    , previewAuthorFour = document.getElementById('previewAuthorFour');
+previewAuthorOne.innerHTML = localStorage.getItem('authorOne');
+previewAuthorTwo.innerHTML = localStorage.getItem('authorTwo');
+previewAuthorThree.innerHTML = localStorage.getItem('authorThree');
+previewAuthorFour.innerHTML = localStorage.getItem('authorFour');
+let sidenavButton = document.getElementsByClassName('sidenavButton')
+    , sidenav = document.getElementsByClassName('sidenav')[0];
+for (let i = 0; i < sidenavButton.length; i++) {
+    sidenavButton[i].addEventListener('click', () => {
+        sidenav.classList.toggle('sidenavOpen');
+    });
+}

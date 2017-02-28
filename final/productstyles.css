@@ -15,6 +15,16 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h3,
+h6,
+p {
+    font-family: 'Merriweather', serif;
+}
+
 button:focus,
 input:focus {
     outline: 0;
@@ -24,61 +34,67 @@ input:focus {
 body {
     text-align: center;
     font-size: 10px;
-    background-color: rgb(7, 15, 36);
+    background-color: rgb(30, 30, 30);
     color: rgb(0, 0, 0);
 }
 
+
+
 .container::-webkit-scrollbar,
-body::-webkit-scrollbar {
-    width: 0.3em;
-    border-radius: 0.2em;
+body::-webkit-scrollbar,
+.sidenav::-webkit-scrollbar {
+    width: 0.5em;
+    background-color: rgb(50, 50, 50)
 }
 
 .container > li::-webkit-scrollbar {
     width: 1em;
-    border-radius: 0.5em;
 }
 
 .container::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track,
 .container > li::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 0.5em;
 }
 
 .container::-webkit-scrollbar-thumb {
     background-color: darkgrey;
-    outline: 1px solid slategrey;
-    border-radius: 0.5em;
+    outline: 1px solid black;
 }
 
 .container > li::-webkit-scrollbar-thumb {
     background-color: rgba(30, 30, 30, 0.4);
-    outline: 1px solid white;
-    border-radius: 0.5em;
+    outline: 1px solid black;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgb(100, 100, 100);
-    outline: 1px solid white;
+    background-color: rgb(150, 150, 150);
+    outline: 1px solid rgb(150, 150, 150);
     border-image: 0.5em;
 }
 
 header {
-    background-color: rgb(7, 15, 36);
-    height: 6em;
-    line-height: 6em;
+    height: 5em;
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(50, 50, 50, 0.94)
 }
 
 h1 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.7em;
-    font-weight: 800;
-    color: white;
+    text-shadow: 0 0 0.2em black;
+    font-size: 2em;
 }
 
 header h1 {
+    position: fixed;
+    right: 0.3em;
+    letter-spacing: 0.1em;
     font-size: 2em;
+    color: #c55c58;
 }
 
 .title {
@@ -91,7 +107,7 @@ header h1 {
     color: rgb(160, 160, 160);
     font-size: 2em;
     font-weight: 800;
-    font-family: 'Merriweather';
+    text-align: left;
 }
 
 #filter {
@@ -105,12 +121,15 @@ header h1 {
 #filter input {
     border: none;
     padding: 0.2em;
-    border-radius: 1em;
     font-size: 2em;
     text-align: center;
-    background-color: rgba(125, 125, 125, 0.3);
+    background-color: rgba(200, 200, 200, 0.8);
     flex-basis: 80%;
     transition: 0.5s;
+}
+
+#filter input::-webkit-input-placeholder {
+    color: white;
 }
 
 .adminLogin {
@@ -119,13 +138,11 @@ header h1 {
 }
 
 .adminLogin input {
-    border-radius: 1em;
     text-align: center;
     opacity: 0.6;
 }
 
 .adminLogin button {
-    border-radius: 1em;
     opacity: 0.6;
 }
 
@@ -138,12 +155,13 @@ header h1 {
 
 #filter button,
 .slide button {
-    background-color: rgba(125, 125, 125, 0.3);
     border: none;
     cursor: pointer;
-    border-radius: 2em;
     transition: 0.5s;
-    color: rgb(160, 160, 160);
+    background-color:  #c55c58;
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 0 0.1em black;
 }
 
 #filter * {
@@ -151,7 +169,7 @@ header h1 {
 }
 
 #filter button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0.7;
 }
 
 #filter button:nth-of-type(1) {
@@ -172,7 +190,7 @@ header h1 {
 
 .container {
     height: 0;
-    background-color: rgba(47, 55, 76, 0.6);
+    background-color: rgba(50, 50, 50, 0.6);
     overflow-x: scroll;
     transition: 2s;
 }
@@ -189,7 +207,6 @@ header h1 {
     min-width: 30em;
     margin: 0.5%;
     padding: 0.5%;
-    border-radius: 0.5em;
     background-color: rgba(155, 155, 155, 0.7);
     -webkit-animation: fadein 1s;
     animation: fadein 1s;
@@ -217,15 +234,45 @@ header h1 {
 #authorOneContainer > li > a,
 #authorTwoContainer > li > a,
 #authorThreeContainer > li > a,
-#authorFourContainer > li > a {
+#authorFourContainer > li > a{
     display: block;
     font-size: 2.3em;
     width: 50%;
     margin: 0 auto;
     color: white;
     font-weight: 800;
+    cursor: pointer;
     background-color: rgb(80, 30, 30);
-    border-radius: 0.2em;
+}
+
+.orderBooksButton {
+    visibility: hidden;
+    position: fixed;
+    animation: fadein 2s;
+    right: 0.7em;
+    bottom: 1em;
+    font-size: 2.4em;
+    padding: 0.5em;
+    z-index: 15;
+    color: white;
+    font-weight: 800;
+    cursor: pointer;
+    background-color: rgb(80, 30, 30);
+    border: 0.1em solid rgb(180, 180, 180);
+}
+
+.orderBooksButtonDisplay {
+    visibility: visible;
+}
+
+
+
+#container > li > img,
+#authorOneContainer > li > img,
+#authorTwoContainer > li > img,
+#authorThreeContainer > li > img,
+#authorFourContainer > li > img {
+    border: 0.5em solid rgba(255, 255, 255, 1);
 }
 
 #container > li.notAvailable > a,
@@ -235,6 +282,7 @@ header h1 {
 #authorFourContainer > li.notAvailable > a {
     background: none;
     color: darkgray;
+    pointer-events: none;
 }
 
 #container > li > p.viewDescriptionContent,
@@ -277,6 +325,16 @@ header h1 {
     margin: 1em auto;
 }
 
+#container > li > button.previewButton,
+#authorOneContainer > li > button.previewButton,
+#authorTwoContainer > li > button.previewButton,
+#authorThreeContainer > li > button.previewButton,
+#authorFourContainer > li > button.previewButton {
+    color: white;
+    text-shadow: 0 0 0.1em black;
+    font-size: 2em;
+}
+
 
 /*previewer popup*/
 
@@ -305,19 +363,19 @@ header h1 {
 
 #slides {
     position: relative;
-    height: 40em;
+    height: 75vh;
     list-style-type: none;
-    text-align: center;
+    text-align: left;
 }
 
 .slide {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
+    padding: 16em 1em 0 1em;
     width: 100%;
     height: 100%;
     opacity: 0;
-    z-index: 1;
     -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;
     -o-transition: opacity 1s;
@@ -330,7 +388,6 @@ header h1 {
 
 .showing {
     opacity: 1;
-    z-index: 2;
 }
 
 .controls {
@@ -358,9 +415,9 @@ header h1 {
 .slide h1,
 .slide p,
 .slide button {
-    margin-top: 1em;
+    color: white;
     text-shadow: 0 0 0.1em black;
-    color: rgb(200, 200, 200);
+    font-weight: 800;
 }
 
 .slide h1 {
@@ -373,6 +430,9 @@ header h1 {
 
 .slide button {
     font-size: 2.4em;
+    color: black;
+    background-color:  #c55c58;
+    font-weight: 800;
     color: white;
 }
 
@@ -380,7 +440,7 @@ header h1 {
 #previous,
 #pause {
     flex: 1;
-    background: rgba(37, 45, 66, 0.6);
+    background: rgba(50, 50, 50, 0.6);
     border: none;
     height: 2em;
     cursor: pointer;
@@ -392,7 +452,7 @@ header h1 {
 #next:hover,
 #previous:hover,
 #pause:hover {
-    background-color: rgba(7, 15, 36, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .controls:hover,
@@ -409,30 +469,52 @@ header h1 {
     position: absolute;
     width: 100%;
     bottom: 0;
-    z-index: 10;
     display: flex;
 }
-
-footer {
-    margin-top: 5em;
+#footer {
+    margin-top: 5em 0 0 0;
+    padding: 0;
+    text-align: center;
     background-color: rgb(50, 50, 50);
 }
 
-footer nav ul {
+#footer * {
+    opacity: 0.9;
+}
+
+#footer #subscribe {
+    width: 100%;
+    background-color: white;
+    color: black;
+    width: 90%;
+    align-self: center;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+#footer #subscribe:hover {
+    opacity: 0.5;
+}
+#footer h1 {
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+
+#footer nav ul {
     display: flex;
     flex-direction: column;
 }
 
-footer nav ul li {
+#footer nav ul li {
     flex: 1;
 }
 
-footer nav ul li iframe {
+#footer nav ul li iframe {
     margin: 2%;
     height: 25em;
     width: 80%;
     opacity: 0.9;
-    border-radius: 1em;
 }
 
 .adminLogin {
@@ -441,29 +523,94 @@ footer nav ul li iframe {
 }
 
 .adminLogin > * {
-    margin: 1em;
+    margin: 1em;    
 }
 
 
 
+/*Menu MUST CONTAIN */
+
+.sidenavButton {
+    top: 0.364em;
+    left: 0.6em;
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    width: 5em;
+}
+
+.sidenavButton:focus {
+    outline: none;
+}
+
+
+/*Sidenav*/
+
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1.5s;
+    width: 100%;
+    height: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    background-color: rgba(50, 50, 50, 1);
+}
+
+.sidenavOpen {
+    height: 100%;
+}
+
+.sidenav > ul > li {
+    margin-top: 2em;
+    flex-basis: 80%;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 800;
+    padding: 1.5em;
+}
+
+.sidenav > ul > li > a {
+    display: block;
+    color: white;
+    transition: 0.3s;
+    height: 3em;
+    line-height: 3em;
+}
+
+.sidenav > ul > li > a:hover {
+    color: rgb(100, 100, 100);
+}
+
+
+/* Menu END OF MUST CONTAIN */
 
 @media (min-width: 690px) and (max-width: 900px) {
-    header h1{
-        font-size: 4em;
+    header h1 {
+        font-size: 3.4em;
     }
-    footer nav ul {
-    flex-direction: row;
-}
+    #footer nav ul {
+        flex-direction: row;
+    }
+    .slide {
+        padding: 22em 2em 0 2em;
+    }
 }
 
 @media (min-width: 901px) {
     header h1 {
-            font-size: 4em;
-
+        font-size: 3.4em;
     }
-   footer nav ul {
-    flex-direction: row;
-}
+    #footer nav ul {
+        flex-direction: row;
+    }
+    .slide {
+        padding: 22em 2em 0 2em;
+    }
 }
 
 @-webkit-keyframes fadein {
