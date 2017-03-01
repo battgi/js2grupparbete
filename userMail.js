@@ -31,12 +31,10 @@ function userSendEmail()
       } 
  function composeTidy()
       {
-        //$('#compose-modal').modal('hide');
         $('#send-to').val('infoastoryuntold@gmail.com');
-        $('#name').val('');
-        $('#email').val('');
+        $('#user-name').val('');
+        $('#user-email').val('');
           
-        //$('#user-send').removeClass('disabled');
       }
 
 function sendMessage(headers_obj, message, callback)
