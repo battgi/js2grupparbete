@@ -1,5 +1,3 @@
-
-console.log("W")
 let sidenavButton = document.getElementsByClassName('sidenavButton')
     , sidenav = document.getElementsByClassName('sidenav')[0]
     , closeNewsletterButton = document.getElementsByClassName('closeNewsletterButton')[0]

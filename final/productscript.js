@@ -184,7 +184,21 @@ function userInfo() {
     }
 }
 //USER SEARCH BUTTON ////////////////////////////////////////////////////////////////////////////////////////////////////////
-document.getElementById('submitButton').addEventListener('click', () => {
+let submitButton = document.getElementById('submitButton')
+    , userInput = document.getElementById('userInput');
+submitButton.addEventListener('click', () => {
+    userSubmit();
+});
+userInput.addEventListener('keypress', (e) => {
+    let keyCode = e.keyCode || e.which;
+    console.log(keyCode);
+    if (keyCode == '13') {
+        userSubmit();
+    }
+});
+
+function userSubmit() {
+    //on click we reset everything
     userIdentifiers = [];
     ready = true;
     document.getElementById('container').classList.add('containerSize');
@@ -194,7 +208,7 @@ document.getElementById('submitButton').addEventListener('click', () => {
     filter.removeElements(); // resetting the search
     bookReq(); //making the request
     document.getElementById('searchResult').innerHTML = "Search result for " + titleInput;
-});
+}
 //HIDES THE RESAULT WITH ORDER VALUE OF NOT AVAILABLE ///////////////////////////////////////////////////////////////////////////
 document.getElementById('hideNotAvailable').addEventListener('click', () => {
     let elements = document.querySelectorAll('.notAvailable');

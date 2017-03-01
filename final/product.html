@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>A Tale Untold - Order</title>
+    <title>A Tale Untold - Products</title>
     <link rel="stylesheet" href="mustContain.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="productstyles.css">
@@ -25,9 +25,9 @@
         <h1>A Tale Untold</h1> </header>
     <div class="newsletter">
         <label for="user-email">Book releases and events right to your inbox <i class="fa fa-arrow-right" aria-hidden="true"></i></label>
-        <input type="mail" placeholder="john@example.com">
+        <input type="mail" placeholder="john@example.com" id="user-email">
         <div class="desktopHide"></div>
-        <button>Subscribe</button>
+        <button id="user-send">Subscribe</button>
         <button class="closeNewsletterButton">&#10006;</button>
     </div>
     <!-- END OF MUST CONTAIN -->
@@ -97,6 +97,9 @@
     <script src="mustContain.js"></script>
     <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
     <script src="productscript.js"></script>
+    <script src="jquery-3.1.1.js"></script>
+    <script src="userMail.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 </body>
 
 </html>

@@ -3,10 +3,9 @@ body {
 }
 
 header {
-        background-color:rgba(47, 55, 76, 0.9);
-
-
+    background-color: rgba(47, 55, 76, 0.9);
 }
+
 .title {
     color: rgb(220, 220, 220);
     margin: 1em;
@@ -20,14 +19,19 @@ header {
     text-align: left;
 }
 
+.headers {
+    color: #c55c58;
+    text-shadow: none;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
     margin-top: 3em;
-    font-size: 2.4em;
-    color: rgb(230, 230, 230);
-    text-shadow: 0 0 0.1em black, 0 0 0.15em black;
+    font-size: 2em;
+    color: white;
+    text-shadow: 0 0 0.1em black, 0 0 0.2em black, 0 0 0.3em black;
 }
 
 td,
@@ -36,17 +40,14 @@ th {
     padding: 0.6em;
 }
 
-
-
 tr:nth-child(even) {
-    background-color:rgba(47, 55, 76, 0.9);
+    background-color: rgba(47, 55, 76, 0.9);
     box-shadow: 0 0 0.3em black inset;
 }
 
 .registration {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
 }
 
 .registration * {
@@ -76,23 +77,25 @@ input::-webkit-input-placeholder {
     font-size: 1.4em;
 }
 
+
 /* Menu END OF MUST CONTAIN */
 
 @media (min-width: 690px) and (max-width: 900px) {
-    
+    table {
+        width: 80%;
+    }
     .registration > input {
         flex-basis: 50%;
     }
-    
-   
 }
 
 @media (min-width: 901px) {
- 
+    table {
+        width: 80%;
+    }
     .registration > input {
         flex-basis: 50%;
     }
-   
 }
 
 @-webkit-keyframes fadein {

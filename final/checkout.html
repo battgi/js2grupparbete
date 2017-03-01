@@ -25,28 +25,30 @@
         <h1>A Tale Untold</h1> </header>
     <div class="newsletter">
         <label for="user-email">Book releases and events right to your inbox <i class="fa fa-arrow-right" aria-hidden="true"></i></label>
-        <input type="mail" placeholder="john@example.com">
+        <input type="mail" placeholder="john@example.com" id="user-email">
         <div class="desktopHide"></div>
-        <button>Subscribe</button>
+        <button id="user-send">Subscribe</button>
         <button class="closeNewsletterButton">&#10006;</button>
     </div>
     <!-- END OF MUST CONTAIN -->
-    <table>
-        <thead>
-            <tr>
-                <th>Books in cart</th>
-                <th>Prices</th>
-            </tr>
-        </thead>
-        <tbody id="tableElement"> </tbody>
-    </table>
-    <div class="registration">
-        <p>Your name:</p>
-        <input type="text" placeholder="Fredrik Bulbenhaken">
-        <p>Your email:</p>
-        <input type="email" placeholder="john@example.com">
-        <p>We will place the book(s) back to the shelf if you don't come and get them within 24hrs</p>
-        <button>Hold my books!</button>
+    <div id="flexContainer">
+        <table>
+            <thead>
+                <tr>
+                    <th class="headers">Books in cart</th>
+                    <th class="headers">Prices</th>
+                </tr>
+            </thead>
+            <tbody id="tableElement"> </tbody>
+        </table>
+        <div class="registration">
+            <p>Your name:</p>
+            <input type="text" placeholder="Fredrik Bulbenhaken" id="check-name">
+            <p>Your email:</p>
+            <input type="email" placeholder="john@example.com" id="check-email">
+            <p>We will place the book(s) back to the shelf if you don't come and get them within 24hrs</p>
+            <button id="check-send">Hold my books!</button>
+        </div>
     </div>
     <!--    MUST CONTAIN-->
     <footer id="footer">
@@ -69,6 +71,10 @@
     <!--    END OF MUST CONTAIN-->
     <script src="mustContain.js"></script>
     <script src="checkout.js"></script>
+    <script src="jquery-3.1.1.js"></script>
+    <script src="userMail.js"></script>
+    <script src="checkoutMail.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
 </body>
 
 </html>
