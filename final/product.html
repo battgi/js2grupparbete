@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>A Tale Untold - Order</title>
+    <link rel="stylesheet" href="productstyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="http://www.polyinnovations.com/images/e-book.png" /> </head>
+
+<body>
+    <!-- MUST CONTAIN --><a href="#order" class="orderBooksButton">My Cart(<span id="bookCounterElement"></span>)</a>
+    <nav class="sidenav">
+        <ul class="flexThis">
+            <button class="sidenavButton">&#10006; Close</button>
+            <li><a href="#sidenavLink1">Order Books</a></li>
+            <li><a href="#sidenavLink2">About Us</a></li>
+            <li><a href="#sidenavLink3">Public</a></li>
+        </ul>
+    </nav>
+    <header class="flexThis">
+        <button class="sidenavButton">&#9776; Menu</button>
+        <h1>A Tale Untold</h1> </header>
+    <!-- END MUST CONTAIN -->
+    <div class="slidesContainer">
+        <ul id="slides">
+            <li class="slide showing">
+                <h1>Book gathering</h1>
+                <p>Next tuesday we will arrange a book gathering for you, the people.</p>
+                <button>Interested? Keep up to date</button>
+            </li>
+            <li class="slide">
+                <h1>We're hiring</h1>
+                <p>We would like to have a new canditate to run for president of the tales untold.</p>
+                <button>Interested? Keep up to date</button>
+            </li>
+            <li class="slide">
+                <h1>Shop open</h1>
+                <p>We're always open. This book shop does not really exist, so that's something. </p>
+                <button>Interested? Keep up to date</button>
+            </li>
+        </ul>
+        <div class="buttons">
+            <button id="previous">&lt;</button>
+            <button id="pause">&#10074;&#10074;</button>
+            <button id="next">&gt;</button>
+        </div>
+    </div>
+    <h1 class="title"> Find your next journey</h1>
+    <div id="filter">
+        <input type="text" id="userInput" placeholder="enter title here" name="userInput">
+        <button id="submitButton">Search</button>
+        <button id="hideNotAvailable">Hide not available</button>
+    </div>
+    <p id="searchResult" class="lesserTitle"></p>
+    <div class="previewerContainer hidden">
+        <div id="viewerCanvas"></div>
+    </div>
+    <ul id="container" class="container"></ul>
+    <h3 class="lesserTitle" id="previewAuthorOne"></h3>
+    <ul id="authorOneContainer" class="container containerSize"></ul>
+    <h3 class="lesserTitle" id="previewAuthorTwo"></h3>
+    <ul id="authorTwoContainer" class="container containerSize"></ul>
+    <h3 class="lesserTitle" id="previewAuthorThree"></h3>
+    <ul id="authorThreeContainer" class="container containerSize"></ul>
+    <h3 class="lesserTitle" id="previewAuthorFour"></h3>
+    <ul id="authorFourContainer" class="container containerSize"></ul>
+    <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
+    <script src="productscript.js"></script>
+    <footer id="footer">
+        <nav>
+            <ul>
+                 <li class="adminLogin">
+                    <h1>Keep up to date:</h1>
+                    <input type="mail">
+                    <buttton id="subscribe">Subscribe</buttton>
+                <li>
+                    <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBiRrrqJZsOFt_kSAZdW7U5xzcIQn9B4Ms&q=Space+Needle,Seattle+WA" allowfullscreen> </iframe>
+                </li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+
+</html>
