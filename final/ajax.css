@@ -1,0 +1,50 @@
+
+/*
+ul > li:hover {
+    background-color: rgba(30, 30, 30, 0.4)
+}
+*/
+header {
+        background-color:rgba(47, 55, 76, 0.9);
+
+}
+
+main {
+    margin-top: 7em;
+    text-align: center;
+    margin-bottom: 20em;
+}
+main li {
+    margin-top: 0.3em;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+main li:hover {
+    background-color: rgba(50, 50, 50, 0.3);
+}
+.answer {
+    margin: 0 0 1em 0;
+    display: none;
+    color: blue;
+}
+
+.displayAnswer {
+    display: block;
+}
+
+.color{
+	background-color: black;
+	
+
+}
+
+
+.form-control{
+
+	width: 350px;
+	height: 25px;
+}
+
+
+

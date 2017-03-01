@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>A Tale Untold - Checkout</title>
+    <title>AJAX</title>
     <link rel="stylesheet" href="mustContain.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="checkout.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="ajax.css">
     <link rel="shortcut icon" type="image/png" href="http://www.polyinnovations.com/images/e-book.png" /> </head>
 
 <body>
@@ -17,7 +14,7 @@
             <button class="sidenavButton">&#10006;</button>
             <li><a href="product.html">Books</a></li>
             <li><a href="ajax.html">FAQ</a></li>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
         </ul>
     </nav>
     <header class="header">
@@ -31,23 +28,18 @@
         <button class="closeNewsletterButton">&#10006;</button>
     </div>
     <!-- END OF MUST CONTAIN -->
-    <table>
-        <thead>
-            <tr>
-                <th>Books in cart</th>
-                <th>Prices</th>
-            </tr>
-        </thead>
-        <tbody id="tableElement"> </tbody>
-    </table>
-    <div class="registration">
-        <p>Your name:</p>
-        <input type="text" placeholder="Fredrik Bulbenhaken">
-        <p>Your email:</p>
-        <input type="email" placeholder="john@example.com">
-        <p>We will place the book(s) back to the shelf if you don't come and get them within 24hrs</p>
-        <button>Hold my books!</button>
-    </div>
+    <main>
+        <h1>Frequently Asked Questions</h1>
+        <form class="search">
+            <div class="form">
+                <input type="text" id="myInput" class="form-control" placeholder="Search" autocomplete="off">
+                <div id="myTable">
+                </div>
+            </div>
+        </form>
+        <h3>Enter your search query above or find your answer below</h3>
+        <ul id="faqContainer"></ul>
+    </main>
     <!--    MUST CONTAIN-->
     <footer id="footer">
         <nav>
@@ -67,8 +59,8 @@
         </nav>
     </footer>
     <!--    END OF MUST CONTAIN-->
+    <script src="ajax.js"></script>
     <script src="mustContain.js"></script>
-    <script src="checkout.js"></script>
 </body>
 
 </html>

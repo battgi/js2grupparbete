@@ -306,10 +306,3 @@ previewAuthorOne.innerHTML = localStorage.getItem('authorOne');
 previewAuthorTwo.innerHTML = localStorage.getItem('authorTwo');
 previewAuthorThree.innerHTML = localStorage.getItem('authorThree');
 previewAuthorFour.innerHTML = localStorage.getItem('authorFour');
-let sidenavButton = document.getElementsByClassName('sidenavButton')
-    , sidenav = document.getElementsByClassName('sidenav')[0];
-for (let i = 0; i < sidenavButton.length; i++) {
-    sidenavButton[i].addEventListener('click', () => {
-        sidenav.classList.toggle('sidenavOpen');
-    });
-}
