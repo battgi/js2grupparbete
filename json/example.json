@@ -1,0 +1,26 @@
+//UPLOAD THIS TO MYJSON.COM AND GET THE URL YOU WILL GET THE DATA WITH
+
+{
+    "faq": [
+        {
+            "question": "How do you live your life?",
+            "answer": "I don't!"
+        },
+        {
+            "question": "Can a cat dance?",
+            "answer": "Maybe"
+        },
+        {
+            "question": "When will you stop this?",
+            "answer": "Probably never"
+        },
+        {
+            "question": "Do ice melt?",
+            "answer": "Don't think so"
+        },
+        {
+            "question": "Is this savvy?",
+            "answer": "You will never know"
+        }
+    ]
+}

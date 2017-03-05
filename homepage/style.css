@@ -1,0 +1,376 @@
+
+
+
+/*MUST CONTAIN*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Merriweather');
+
+/*font-family: 'Merriweather', serif;
+font-family: 'Cinzel Decorative', cursive;*/
+
+h1,
+h3,
+h6,
+body,
+button,
+input,
+p,
+a,
+ol,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+input {
+    color: black;
+}
+
+button {
+    background-color: #c55c58;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    color: white;
+}
+
+button:focus,
+input:focus {
+    outline: 0;
+}
+.container::-webkit-scrollbar,
+body::-webkit-scrollbar,
+.sidenav::-webkit-scrollbar{
+    width: 0.5em;
+    background-color: rgb(50, 50, 50)
+}
+
+.container > li::-webkit-scrollbar {
+    width: 1em;
+}
+
+.container::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+.container > li::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid black;
+}
+
+.container > li::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 30, 30, 0.4);
+    outline: 1px solid black;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(150, 150, 150);
+    outline: 1px solid rgb(150, 150, 150);
+    border-image: 0.5em;
+}
+
+.flexThis {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+body {
+    font-size: 10px;
+    background-color: rgb(50, 50, 50);
+}
+
+header {
+    height: 5em;
+    background-color: rgba(50, 50, 50, 0.94);
+    line-height: 5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+}
+
+h1 {
+    text-shadow: 0 0 0.2em black;
+    font-size: 2em;
+}
+
+header h1 {
+    position: fixed;
+    right: 0.3em;
+    letter-spacing: 0.1em;
+    font-size: 2em;
+    color: #c55c58;
+}
+
+/* END OF MUST CONTAIN */
+
+p {
+    font-size: 1.8em;
+    text-shadow: 0 0 0.1em black;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?dpr=1.5&auto=compress,format&fit=crop&w=767&h=709&q=80&cs=tinysrgb&crop=");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+main > div {
+    margin-left: 1em;
+}
+
+main > div > h1,
+main > div > button {
+    width: 70%;
+}
+
+main > div > h1 {
+    margin-bottom: 1em;
+}
+
+main > div > button {
+    margin-bottom: 4em;
+    font-size: 2em;
+}
+
+.newsletter {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(60, 60, 60);
+    height: 6em;
+    align-items: center;
+    transition: 0.5s;
+    overflow: hidden;
+    padding-left: 0.3em;
+    animation: fadein 3s;
+}
+
+.newsletter > h3,
+.newsletter > input,
+.newsletter > div,
+.newsletter > button:nth-of-type(1) {
+    flex-basis: 42%;
+    line-height: 1.em;
+    height: 1.7em;
+    border: none;
+    text-align: center;
+    width: 100%;
+}
+
+.newsletter > h3 {
+    text-align: left;
+}
+
+.newsletter > button:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    right: 0.6em;
+    font-size: 2em;
+    background-color: transparent;
+}
+
+.closeNewsletter {
+    height: 0;
+}
+
+#about {
+    background-color: rgb(60, 60, 60);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about > div {
+    flex: 80%;
+    margin: 5em 2% 0 2%;
+}
+
+
+#about > div:nth-of-type(1) {
+    margin: 2em;
+}
+#about > div:nth-of-type(2) {
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+}
+
+#about > div:nth-of-type(2) > div {
+    padding: 1em;
+    text-align: center;
+}
+
+#about img {
+    width: 14em;
+    border-radius: 50%;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+
+footer {
+    background-color: rgb(30, 30, 30);
+    height: 30vh;
+}
+
+
+/*Menu MUST CONTAIN */
+
+.sidenavButton {
+    top: 0.4em;
+    left: 0.6em;
+    position: absolute;
+    z-index: 100;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    width: 5em;
+}
+
+.sidenavButton:focus {
+    outline: none;
+}
+
+
+/*Sidenav*/
+
+.sidenav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1.5s;
+    width: 100%;
+    height: 0;
+    z-index: 10;
+    overflow-x: hidden;
+    background-color: rgba(50, 50, 50, 1);
+}
+
+.sidenavOpen {
+    height: 100%;
+}
+
+.sidenav > ul > li {
+    margin-top: 2em;
+    flex-basis: 80%;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 800;
+    padding: 1.5em;
+}
+
+.sidenav > ul > li > a {
+    display: block;
+    color: white;
+    transition: 0.3s;
+    height: 3em;
+    line-height: 3em;
+}
+
+.sidenav > ul > li > a:hover {
+    color: rgb(100, 100, 100);
+}
+
+/* Menu END OF MUST CONTAIN */
+
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+}
+
+h3,
+h6,
+p {
+    font-family: 'Merriweather', serif;
+}
+
+@media (min-width: 690px) and (max-width: 900px) {
+    main > .centerContainer {
+        flex-direction: row;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    header h1 {
+        font-size: 3.4em;
+    }
+    .arrowDown {
+        font-size: 3em;
+    }
+    #about > div:nth-of-type(2) {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 901px) {
+    .desktopHide {
+        display: none;
+    }
+    main > .centerContainer {
+        flex-direction: row;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    header h1 {
+        font-size: 3.4em;
+    }
+    .newsletter {
+        align-items: center;
+        height: 4em;
+    }
+    .newsletter > h3,
+    .newsletter > input,
+    .newsletter > div,
+    .newsletter > button:nth-of-type(1) {
+        flex: 1;
+        line-height: 1.em;
+        margin: 0.7em 2.7em 0.4em 0.7em;
+        height: 1.7em;
+        border: none;
+        text-align: center;
+    }
+    .closeNewsletter {
+        height: 0;
+    }
+    .newsletter > button:nth-of-type(2) {
+        top: 0.35em;
+        right: 0.6em;
+    }
+    .newsletter > h3 {
+        font-size: 1.5em;
+    }
+    #about > div:nth-of-type(2) {
+        flex-direction: row;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
